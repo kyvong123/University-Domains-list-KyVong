@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import {setTheme } from 'ngx-bootstrap/utils';
 @Component({
   // tslint:disable-next-line
   selector: 'body',
@@ -8,7 +7,7 @@ import {setTheme } from 'ngx-bootstrap/utils';
 })
 export class AppComponent implements OnInit {
   constructor(private router: Router) { 
-    setTheme('bs4');
+
   }
 
   ngOnInit() {
