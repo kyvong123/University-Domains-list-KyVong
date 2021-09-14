@@ -1,0 +1,47 @@
+
+<app-header
+  [fixed]="true"
+  [navbarBrandFull]="{src: 'assets/img/logo.png', width: 89, height: 25, alt: 'CoreUI Logo'}"
+  [navbarBrandMinimized]="{src: 'assets/img/logo.png', width: 30, height: 30, alt: 'CoreUI Logo'}"
+  [sidebarToggler]="'lg'">
+  
+  <ul class="nav navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+          <a  class=" btn btn-ghost-light dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">
+            <img src="assets/img/avatars/2.jpg" class="img-thumbnail rounded-circle" style="max-width: 40px;margin: -4px 8px 0 0;">Lê Mạnh</a>
+            <div class="dropdown-menu dropdown-menu-right" role="menu">
+                <div class="dropdown-header text-center"><strong>Account</strong></div>
+                <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>
+                <div class="dropdown-header text-center"><strong>Settings</strong></div>
+                <a class="dropdown-item" href="#"><i class="fa fa-wrench"></i> Setting</a>
+                <div class="divider"></div>
+                <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Logout</a>
+              </div>
+      </li>
+  </ul>
+</app-header>
+
+<div class="app-body">
+  <app-sidebar [fixed]="true" [display]="'lg'">
+    <app-sidebar-nav [navItems]="navItems" [perfectScrollbar] [disabled]="sidebarMinimized"></app-sidebar-nav>
+    <app-sidebar-minimizer></app-sidebar-minimizer>
+  </app-sidebar>
+  <!-- Main content -->
+  <main class="main">
+    <!-- Breadcrumb -->
+    <ol class="breadcrumb">
+      <app-breadcrumb></app-breadcrumb>
+      <!-- Breadcrumb Menu-->
+      <li class="breadcrumb-menu ">
+        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+          <a class="btn btn-pill btn-ghost-light" [routerLink]="['/login']" ><i class="fa fa-th-list" ></i>&nbsp;Nhà bếp</a>
+          <a class="btn btn-pill btn-ghost-warning" [routerLink]="['/order']" ><i class="fa fa-money" ></i>&nbsp;Thu ngân</a>
+        </div>
+      </li>
+    </ol>
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div><!-- /.container-fluid -->
+  </main>
+</div>
+
