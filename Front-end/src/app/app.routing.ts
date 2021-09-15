@@ -20,7 +20,12 @@ export const routes: Routes = [
     children: [
       {
         path: 'dashboard',
+        // loadChildren:'./views/dashboard/dashboard.module#DashBoardModule'
         loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule)
+      }// },
+      ,{
+        path: 'cardlist',
+        loadChildren: () => import('./views/card-list/card-list.module').then(mt => mt.CardListModule)
       }
     
            

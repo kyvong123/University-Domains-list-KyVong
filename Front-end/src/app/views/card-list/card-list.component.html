@@ -1,1 +1,63 @@
-<p>card-list works!</p>
+		
+<div class="card">
+	<div class="card-body">	
+			<div class="container-fluid">
+			    <main>
+                    <p-dataView #dv value="universities" paginator="true" rows="9" filterBy="name"
+                    sortField="sortField" sortOrder="sortOrder" layout="grid">
+                    <ng-template pTemplate="header">
+                        <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
+                            <p-dropdown options="sortOptions" ngModel="sortKey" placeholder="Sort By" onChange="onSortChange($event)" styleClass="p-mb-2 p-mb-md-0"></p-dropdown>
+                            <span class="p-input-icon-left p-mb-2 p-mb-md-0">
+                                <i class="pi pi-search"></i>
+                                <input type="search" pInputText placeholder="Search by Name" input="dv.filter($event.target.value)">
+                            </span>
+                            <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+                        </div>
+                    </ng-template>
+                    <ng-template let-university pTemplate="listItem">
+                        <div class="p-col-12">
+                            <div class="university-list-item">
+                                <img src="https://media.istockphoto.com/vectors/university-black-glyph-icon-vector-id1269946309e"/>
+                                <div class="university-list-detail">
+                                    <div class="university-name">{{university.name}}</div>
+                                    <div class="university-description">{{university.country}}</div>
+                                    <!-- <p-rating [ngModel]="university.rating" [readonly]="true" [cancel]="false"></p-rating> -->
+                                    <!-- <i class="pi pi-tag university-category-icon"></i><span class="university-category">{{university.category}}</span> -->
+                                </div>
+                                <div class="university-list-action">
+                                    <span class="university-price">${{university.alpha_two_code}}</span>
+                                    <!-- <p-button icon="pi pi-shopping-cart" label="Add to Cart" [disabled]="university.inventoryStatus === 'OUTOFSTOCK'"></p-button> -->
+                                    <!-- <span [class]="'university-badge status-' + university.inventoryStatus.toLowerCase()">{{university.inventoryStatus}}</span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <!-- <ng-template let-university pTemplate="gridItem">
+                        <div class="p-col-12 p-md-4">
+                            <div class="university-grid-item card">
+                                <div class="university-grid-item-top">
+                                    <div>
+                                        <i class="pi pi-tag university-category-icon"></i>
+                                        <span class="university-category">{{university.alpha_two_code}}</span>
+                                    </div>
+                                    <span class='university-badge status'></span>
+                                </div>
+                                <div class="university-grid-item-content">
+                                    <img src="https://media.istockphoto.com/vectors/university-black-glyph-icon-vector-id1269946309e"/>
+                                    <div class="university-name">{{university.name}}</div>
+                                    <div class="university-description">{{university.description}}</div>
+        
+                                </div>
+                                <div class="university-grid-item-bottom">
+                                    <span class="university-price">${{university.alpha_two_code}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template> -->
+                </p-dataView>
+
+                </main>
+            </div>
+    </div>
+</div>

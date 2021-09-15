@@ -40,10 +40,14 @@ import { AppRoutingModule } from './app.routing';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
-import { CardListComponent } from './views/card-list/card-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+// import { CardListComponent } from './views/card-list/card-list.component';
 
 @NgModule({
   imports: [
+    HttpClientModule,
+    HttpModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -62,7 +66,7 @@ import { CardListComponent } from './views/card-list/card-list.component';
   declarations: [
     AppComponent,
     ...APP_CONTAINERS,
-    CardListComponent
+    // CardListComponent
     
   ],
   providers: [
