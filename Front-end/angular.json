@@ -20,26 +20,34 @@
               "src/assets"
             ],
             "styles": [
-             
+              "node_modules/@coreui/icons/css/free.css",
+              "node_modules/flag-icon-css/css/flag-icon.css",
+              "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/simple-line-icons/dist/styles/simple-line-icons.css",
+              "src/scss/style.scss"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
                 "./node_modules"
               ]
             },
-            "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              
-              "node_modules/popper.js/dist/umd/popper.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "chart.js",
+              "classnames"
             ]
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -78,16 +86,12 @@
             "karmaConfig": "./karma.conf.js",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
-            "scripts": [
-             
-            ],
+            "scripts": [],
             "styles": [
-              {
-                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
-              },
+              "node_modules/@coreui/icons/css/free.css",
               "node_modules/flag-icon-css/css/flag-icon.css",
               "node_modules/font-awesome/css/font-awesome.css",
-              "node_modules/simple-line-icons/css/simple-line-icons.css",
+              "node_modules/simple-line-icons/dist/styles/simple-line-icons.css",
               "src/scss/style.scss"
             ],
             "stylePreprocessorOptions": {
@@ -145,10 +149,13 @@
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
-      "styleext": "scss"
+      "style": "scss"
     },
     "@schematics/angular:directive": {
       "prefix": "app"
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
