@@ -10,35 +10,34 @@ import {Message} from 'primeng/api';
 
 @Component({
   templateUrl: 'card-list.component.html',
-//   styleUrls: [
-//     "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css"
-// ]
+  styleUrls: ['./card-list.component.scss']
 })
 export class CardListComponent implements OnInit {
 
 
 
-  public loading = false;
-  public universities: University[];
+  loading = false;
+  
+  universities: University[] = [];
 
-  sortOptions: SelectItem[];
+  sortOptions: SelectItem[] = [];
 
-    msgs: Message[] = [];
-    
-    sortKey: string;
+  msgs: Message[] = [];
+  
+  sortKey: string = '';
 
-    sortField: string;
+  sortField: string = '';
 
-    sortOrder: number;
+  sortOrder: number = 0;
 
 
   constructor(private service: UniversityService ) { }
   images: any[];
   ngOnInit() {
     this.loadData();
-    this.sortOptions = this.sortOptions = [
+    this.sortOptions = [
       {label: 'Name', value: 'name'},
-      {label: 'Country', value: 'Country'},
+      {label: 'Country', value: 'country'},
   ];
   }
   
