@@ -5,8 +5,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import {DataViewModule} from 'primeng/dataview';
 import {ButtonModule} from 'primeng/button';
-import { CardListComponent } from './card-list.component';
-import { CardListRoutingModule } from './card-list-routing.module';
+import { NewsLetter1Component } from './newsletter1.component';
+import { NewsLetter1RoutingModule } from './newsletter1-routing.component';
 import {RatingModule} from 'primeng/rating';
 import {Dropdown, DropdownModule} from 'primeng/dropdown';
 import {PanelModule} from 'primeng/panel';
@@ -20,7 +20,7 @@ import {KeyFilterModule} from 'primeng/keyfilter';
 @NgModule({
   imports: [
     FormsModule,
-    CardListRoutingModule,
+    NewsLetter1RoutingModule,
     ChartsModule,
     ButtonModule,
     KeyFilterModule,
@@ -35,6 +35,6 @@ import {KeyFilterModule} from 'primeng/keyfilter';
     BsDropdownModule,
     ButtonsModule.forRoot()
   ],
-  declarations: [ CardListComponent ]
+  declarations: [ NewsLetter1Component ]
 })
-export class CardListModule { }
+export class NewsLetter1Module { }

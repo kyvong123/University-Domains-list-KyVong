@@ -3,16 +3,19 @@
 	<div class="card-body">	
 			<div class="container-fluid row row-cols-1 row-cols-md-3 g-4">
 			    <main>
+					<h5>Latest news</h5>
+					<br>
+					<br>
 					<div class="row row-cols-1 row-cols-md-3 g-4">
-						<div class="col" >
-						  <div class="card h-100"><img class="card-img-top" src="https://www.universityworldnews.com/images/articles/20210909160130427_5.jpg" alt="">
+						<div class="col" [routerLink]="['/newsletter1']" [style]="{'cursor':'pointer'}">
+						  <div class="card h-100"><img  class="card-img-top" src="https://www.universityworldnews.com/images/articles/20210909160130427_5.jpg" alt="">
 							<div class="card-body">
 							  <h5 class="card-title" >New semester sees many foreign students still shut out</h5>
 							  <p class="card-text">As the new semester begins this month in Japan, China, Taiwan and South Korea, local and foreign students are facing continued online teaching and in some cases border restrictions for international students even as vaccine programmes get under way, adding to the uncertainty for students.</p>
 							</div>
 						  </div>
 						</div>
-						<div class="col">
+						<div class="col" [routerLink]="['/newsletter1']" [style]="{'cursor':'pointer'}"> 
 						  <div class="card h-100"><img class="card-img-top" src="https://www.universityworldnews.com/images/articles/20210910154002695_5.jpg" alt="">
 							<div class="card-body">
 							  <h5 class="card-title">Young leaders plan next steps towards gender equity</h5>
@@ -20,7 +23,7 @@
 							</div>
 						  </div>
 						</div>
-						<div class="col">
+						<div class="col" [routerLink]="['/newsletter1']" [style]="{'cursor':'pointer'}">
 						  <div class="card h-100"><img class="card-img-top" src="https://www.universityworldnews.com/images/articles/20210906143544798_5.jpg" alt="">
 							<div class="card-body">
 							  <h5 class="card-title">The university has a role to play in defending democracy</h5>
@@ -28,7 +31,7 @@
 							</div>
 						  </div>
 						</div>
-						<div class="col">
+						<div class="col" [routerLink]="['/newsletter1']" [style]="{'cursor':'pointer'}">
 						  <div class="card h-100"><img class="card-img-top" src="https://hcmuni.fpt.edu.vn/Data/Sites/1/News/4378/zing_truong2-(1).jpg" alt="">
 							<div class="card-body">
 							  <h5 class="card-title">University Halls Vs Private Accommodation: Which Is Best?</h5>

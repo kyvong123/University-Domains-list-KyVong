@@ -26,6 +26,10 @@ export const routes: Routes = [
       ,{
         path: 'cardlist',
         loadChildren: () => import('./views/card-list/card-list.module').then(mt => mt.CardListModule)
+      },
+      {
+        path: 'newsletter1',
+        loadChildren: () => import('./views/newsletter1/newsletter1.modules').then(mt => mt.NewsLetter1Module)
       }
     
            

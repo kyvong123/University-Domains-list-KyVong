@@ -42,6 +42,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { NewsLetter1Component } from './views/newsletter1/newsletter1.component';
 // import { CardListComponent } from './views/card-list/card-list.component';
 
 @NgModule({
@@ -66,6 +67,7 @@ import { HttpModule } from '@angular/http';
   declarations: [
     AppComponent,
     ...APP_CONTAINERS,
+    // Newsletter1Component,
     // CardListComponent
     
   ],
