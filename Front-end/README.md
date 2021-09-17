@@ -19,6 +19,8 @@ $ cd Front-End
 
 Install neccesary source :
 $ npm install
+(if the command didn't work):
+$ npm install --legacy-peer-deps
 ```
 
 # Usage
@@ -36,22 +38,36 @@ $ ng build
 ```
 
 ## Back-end
+
+# Build environment:
 ```bash
-Build environment:
 - Open University-Domains-list-KyVong Folder
 - Run cmd here
 $>env\Scripts\activate
+```
 
-Create Admin:
+# Create Admin
+```Bash
 (env)$>py manage.py createsuperuser createsuperuser
 - Type username and password to create user.
+```
 
-Run admin server:
+# Run admin serve
+```Bash
 (env)$>django-admin runserver
 (In browser search bar):localhost:8000/admin
 - Enter username, password
 - Create more user here
+```
+# Install
+``` Bash
+(env)$>pip install djangorestframework
+(env)$>pip install markdown       
+(env)$>pip install django-filter 
+```
 
-Run Login feature:
+# Login feature
+``` Bash
 (In browser search bar):localhost:4200/#/login
 ...       (in process)
+```
