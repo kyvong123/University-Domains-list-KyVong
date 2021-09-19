@@ -18,17 +18,26 @@ const httpOptions = {
 
 
 export class AuthService{
+    private loggedInStatus = false
+
     api_url: string = 'http://localhost:8000/';
+
     constructor(private http:HttpClient){}
+
+    setLoggedIn(value:boolean){
+        this.loggedInStatus = value
+    }
+
+    get isLoggedIn(){
+        return this.loggedInStatus
+    }
+
     getUser(username:string,password:string) {
-        // let headers = new Headers({ 'Content-Type': 'application/json' });
-        // let options = new RequestOptions({ headers: headers });
-          
         return this.http.post<any>(this.api_url + `accounts/api/auth/`,
         {username, password},httpOptions).pipe(
             map(user=>{
-                    console.log("vao day")
                     if (user && user.token) {
+                        this.loggedInStatus = true;
                         localStorage.setItem("currentUser", JSON.stringify(user))
                     }              
                     return user;

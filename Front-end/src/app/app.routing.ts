@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 
 // Import Containers
 import { DefaultLayoutComponent } from './containers';
@@ -10,9 +11,15 @@ export const routes: Routes = [
   {
     path: '',
     redirectTo: 'dashboard',
+    // canActivate: [AuthGuard],
     pathMatch: 'full',
     // canActivate:[AuthGuard]
   },
+  // {
+  //   path: 'admin',
+  //   component: AdminComponent,
+  //   canActivate: [AuthGuard]
+  // },
   {
     path: 'login',
     component: LoginComponent
@@ -20,6 +27,7 @@ export const routes: Routes = [
   {
     path: '',
     component: DefaultLayoutComponent,
+    canActivate:[AuthGuard],
     data: {
       title: 'Home'
     },

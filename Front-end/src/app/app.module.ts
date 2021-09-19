@@ -45,6 +45,7 @@ import { HttpModule } from '@angular/http';
 import { NewsLetter1Component } from './views/newsletter1/newsletter1.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './views/login/login.component';
+import { AuthGuard } from './auth.guard';
 // import { CardListComponent } from './views/card-list/card-list.component';
 
 @NgModule({
@@ -83,7 +84,8 @@ import { LoginComponent } from './views/login/login.component';
       useClass: HashLocationStrategy
     },
     IconSetService,
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [ AppComponent ]
 })
