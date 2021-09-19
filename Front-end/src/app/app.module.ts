@@ -14,7 +14,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 };
 
 import { AppComponent } from './app.component';
-
+import {AuthService} from './views/serrvice/Auth.service';
 // Import containers
 import { DefaultLayoutComponent } from './containers';
 
@@ -43,6 +43,8 @@ import { ChartsModule } from 'ng2-charts';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { NewsLetter1Component } from './views/newsletter1/newsletter1.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './views/login/login.component';
 // import { CardListComponent } from './views/card-list/card-list.component';
 
 @NgModule({
@@ -57,6 +59,8 @@ import { NewsLetter1Component } from './views/newsletter1/newsletter1.component'
     AppFooterModule,
     AppHeaderModule,
     AppSidebarModule,
+    FormsModule,
+    ReactiveFormsModule,
     PerfectScrollbarModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
@@ -66,6 +70,7 @@ import { NewsLetter1Component } from './views/newsletter1/newsletter1.component'
   ],
   declarations: [
     AppComponent,
+    LoginComponent,
     ...APP_CONTAINERS,
     // Newsletter1Component,
     // CardListComponent
@@ -73,10 +78,12 @@ import { NewsLetter1Component } from './views/newsletter1/newsletter1.component'
   ],
   providers: [
     {
+    
       provide: LocationStrategy,
       useClass: HashLocationStrategy
     },
     IconSetService,
+    AuthService
   ],
   bootstrap: [ AppComponent ]
 })

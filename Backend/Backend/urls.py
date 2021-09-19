@@ -19,27 +19,31 @@ from rest_framework.urlpatterns import format_suffix_patterns
 # from hello import views
 from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
-from django.conf.urls import include
+from django.conf.urls import include, url
+from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token
 
 urlpatterns = [
+    path('', include('public.urls')),
     path('admin/', admin.site.urls),
-    # path('', include(routers.Route.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api/auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('accounts/', include('accounts.urls')),
+    # path(r'api-token-auth/', obtain_jwt_token),
+    # path(r'api-token-refresh/', refresh_jwt_token),
 ]
 
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = User
-        fields = ['url', 'username', 'email', 'is_staff']
+# class UserSerializer(serializers.HyperlinkedModelSerializer):
+#     class Meta:
+#         model = User
+#         fields = ['url', 'username', 'email', 'is_staff']
 
-# ViewSets define the view behavior.
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+# # ViewSets define the view behavior.
+# class UserViewSet(viewsets.ModelViewSet):
+#     queryset = User.objects.all()
+#     serializer_class = UserSerializer
 
-# Routers provide an easy way of automatically determining the URL conf.
-router = routers.DefaultRouter()
-router.register(r'users', UserViewSet)
+# # Routers provide an easy way of automatically determining the URL conf.
+# router = routers.DefaultRouter()
+# router.register(r'users', UserViewSet)
 
 
