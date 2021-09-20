@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../../views/serrvice/Auth.service';
+import { AuthService } from '../../views/service/Auth.service';
 import { navItems } from '../../_nav';
 
 @Component({

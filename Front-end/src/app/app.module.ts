@@ -14,7 +14,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 };
 
 import { AppComponent } from './app.component';
-import {AuthService} from './views/serrvice/Auth.service';
+import {AuthService} from './views/service/Auth.service';
 // Import containers
 import { DefaultLayoutComponent } from './containers';
 

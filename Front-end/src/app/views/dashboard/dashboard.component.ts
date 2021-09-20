@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities';
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 import { University } from '../moldels/University.class';
-import { UniversityService } from '../serrvice/University.service';
+import { UniversityService } from '../service/University.service';
 import { map } from 'rxjs/operators';
 import {Response} from '@angular/http';
 import { Galleria } from 'primeng/galleria';

@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'public.apps.PublicConfig',
     'corsheaders',
     'rest_framework.authtoken',
-
+    'favoriteuniversity',
 ]
 
 MIDDLEWARE = [

@@ -21,12 +21,14 @@ from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
 from django.conf.urls import include, url
 from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token
-
+from favoriteuniversity.views import FavoriteList, FavoriteDetail
 urlpatterns = [
     path('', include('public.urls')),
     path('admin/', admin.site.urls),
     path('api/auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('accounts/', include('accounts.urls')),
+    path('api/favorite',FavoriteList.as_view()),
+    path('api/favorite/<int:pk>',FavoriteDetail.as_view())
     # path(r'api-token-auth/', obtain_jwt_token),
     # path(r'api-token-refresh/', refresh_jwt_token),
 ]

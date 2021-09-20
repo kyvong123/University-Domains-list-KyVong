@@ -22,6 +22,8 @@ export class AuthService{
 
     api_url: string = 'http://localhost:8000/';
 
+    authtoken:string = '';
+
     constructor(private http:HttpClient){}
 
     setLoggedIn(value:boolean){
@@ -38,7 +40,8 @@ export class AuthService{
             map(user=>{
                     if (user && user.token) {
                         this.loggedInStatus = true;
-                        localStorage.setItem("currentUser", JSON.stringify(user))
+                        this.authtoken = user.token;
+                        localStorage.setItem("currentUser", JSON.stringify(user));
                     }              
                     return user;
             }));
