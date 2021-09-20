@@ -20,9 +20,11 @@ const httpOptions = {
 export class AuthService{
     private loggedInStatus = false
 
-    api_url: string = 'http://localhost:8000/';
+    authtoken: string = '';
 
-    authtoken:string = '';
+    authname: string = '';
+
+    api_url: string = 'http://localhost:8000/';
 
     constructor(private http:HttpClient){}
 
@@ -41,7 +43,8 @@ export class AuthService{
                     if (user && user.token) {
                         this.loggedInStatus = true;
                         this.authtoken = user.token;
-                        localStorage.setItem("currentUser", JSON.stringify(user));
+                        this.authname = user.username;
+                        localStorage.setItem("currentUser", JSON.stringify(user))
                     }              
                     return user;
             }));

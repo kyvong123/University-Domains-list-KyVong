@@ -1,4 +1,5 @@
 export class Favorite{
-    username:string;
-    password:string;
+    id:number;
+    user:string;
+    favorite_list:string;
 }

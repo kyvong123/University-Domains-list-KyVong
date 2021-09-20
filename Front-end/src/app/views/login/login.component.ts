@@ -3,7 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 import { User } from '../moldels/User.class';
-import { AuthService } from '../service/Auth.service';
+import { AuthService } from '../serrvice/Auth.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
     //   username:username,
     //   password:password
     // }
+    console.log(this.f.username.value,this.f.password.value);
     this.authService.getUser(this.f.username.value,this.f.password.value).pipe(first()).subscribe(
       data =>{
         this.router.navigate(['/dashboard'])

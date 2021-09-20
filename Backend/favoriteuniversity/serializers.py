@@ -5,4 +5,4 @@ from favoriteuniversity.models import FavoriteUniversity
 class FavoriteUniversitySerializer(serializers.ModelSerializer):
     class Meta:
         model = FavoriteUniversity
-        fields = ['user','favorite_list']
+        fields = ['id','user','favorite_list']

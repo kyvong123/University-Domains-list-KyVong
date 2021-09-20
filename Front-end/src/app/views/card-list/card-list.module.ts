@@ -15,6 +15,7 @@ import {ProgressBarModule} from 'primeng/progressbar';
 import {InputTextModule} from 'primeng/inputtext'
 import {ContextMenuModule} from 'primeng/contextmenu';
 import {KeyFilterModule} from 'primeng/keyfilter';
+import { CommonModule } from '@angular/common';
 // import {FormsModule} from '@angular/forms';
 
 @NgModule({
@@ -32,6 +33,7 @@ import {KeyFilterModule} from 'primeng/keyfilter';
     DataViewModule,
     RatingModule,
     DropdownModule,
+    CommonModule,
     BsDropdownModule,
     ButtonsModule.forRoot()
   ],
