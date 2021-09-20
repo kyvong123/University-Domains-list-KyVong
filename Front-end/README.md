@@ -50,6 +50,7 @@ $>env\Scripts\activate
 ```Bash
 (env)$>py manage.py createsuperuser createsuperuser
 - Type username and password to create user.
+- Type "py manage.py drf_create_token (username)" to generate user's token
 ```
 
 # Run admin serve
