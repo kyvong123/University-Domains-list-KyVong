@@ -5,6 +5,7 @@ import { AuthGuard } from './auth.guard';
 // Import Containers
 import { DefaultLayoutComponent } from './containers';
 import { LoginComponent } from './views/login/login.component';
+import { RegisterComponent } from './views/register/register.component';
 
 
 export const routes: Routes = [
@@ -23,6 +24,10 @@ export const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   },
   {
     path: '',

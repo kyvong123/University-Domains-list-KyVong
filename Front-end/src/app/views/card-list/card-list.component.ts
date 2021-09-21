@@ -10,7 +10,7 @@ import {Message} from 'primeng/api';
 import { FavoriteService } from '../serrvice/Favorite.service';
 import { Favorite } from '../moldels/Favorite.class';
 import { AuthService } from '../serrvice/Auth.service';
-import * as crypto from 'crypto';
+// import * as crypto from 'crypto';
 
 
 
@@ -135,12 +135,12 @@ AddFavorite(envent,selectedUni:University){
         this.favoriteService.postFavorite(this.selectedFavorite).subscribe(
           x=>{
             console.log("thanh cong")
-            let password = "lkv03091967"
-            const salt = crypto.randomBytes(128);
-            console.log(salt);
-            const hash = crypto.pbkdf2Sync(password, salt, 1, 32, 'sha1');
+            // let password = "lkv03091967"
+            // const salt = crypto.randomBytes(128);
+            // console.log(salt);
+            // const hash = crypto.pbkdf2Sync(password, salt, 1, 32, 'sha1');
         
-            console.log(hash.toString('hex'));
+            // console.log(hash.toString('hex'));
           }
         )
       }

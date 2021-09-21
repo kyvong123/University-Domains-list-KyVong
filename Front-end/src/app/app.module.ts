@@ -46,6 +46,7 @@ import { NewsLetter1Component } from './views/newsletter1/newsletter1.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './views/login/login.component';
 import { AuthGuard } from './auth.guard';
+import { RegisterComponent } from './views/register/register.component';
 // import { CardListComponent } from './views/card-list/card-list.component';
 
 @NgModule({
@@ -72,6 +73,7 @@ import { AuthGuard } from './auth.guard';
   declarations: [
     AppComponent,
     LoginComponent,
+    RegisterComponent,
     ...APP_CONTAINERS,
     // Newsletter1Component,
     // CardListComponent

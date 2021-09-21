@@ -4,6 +4,7 @@ import { Headers, Http, RequestOptions,Response } from "@angular/http";
 import { Observable } from "rxjs";
 import {map} from 'rxjs/operators';
 import { User } from "../moldels/User.class";
+import { Admin } from "../moldels/Admin.class";
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -49,6 +50,19 @@ export class AuthService{
                     return user;
             }));
             
+    }
+
+    postAdmin(admin:Admin)
+    {
+        let httpOptions = {
+            headers: new HttpHeaders({
+                'Authorization' : ('token ' + this.authtoken) 
+            })
+        }
+        return this.http.post<any>('http://localhost:8000/accounts/userlist/',admin,httpOptions)
+        .pipe(map(
+            res =>{}
+        ))
     }
     
 }
