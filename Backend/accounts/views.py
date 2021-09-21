@@ -1,5 +1,6 @@
+from accounts.serializers import UserSerializer
 from django.shortcuts import render
-from rest_framework import serializers
+from rest_framework import generics, serializers
 # Create your views here.
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
@@ -9,6 +10,7 @@ from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.authtoken.models import Token
 from django.views.decorators.clickjacking import xframe_options_exempt
 from django.http import HttpResponse
+from django.contrib.auth.models import User
 # @xframe_options_exempt
 # def ok_to_load_in_a_frame(request):
 #     return HttpResponse("This page is safe to load")
@@ -39,5 +41,11 @@ class CustomAuthToken(ObtainAuthToken):
             'email':user.email
         })
         
+class ProfileList(generics.ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
+class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = User
+    serializer_class = UserSerializer
 

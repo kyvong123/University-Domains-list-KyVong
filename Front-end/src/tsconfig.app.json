@@ -9,16 +9,20 @@
     "paths": {
       "@angular/*": [
         "../node_modules/@angular/*"
-      ]
+      ],
+      "crypto": [
+        "./node_modules/crypto-browserify"
+      ],
     }
   },
   "angularCompilerOptions": {
-    "enableIvy": true,
+    "enableIvy": false,
     "importHelpers": true
   },
   "files": [
     "main.ts",
-    "polyfills.ts"
+    "polyfills.ts",
+    "./node_modules/@types/node/index.d.ts"
   ],
   "include": [
     "**/*.d.ts"
