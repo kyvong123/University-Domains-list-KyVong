@@ -16,7 +16,7 @@ const httpOptions = {
 })
 export class UniversityService {
 
-  API_URL: string = 'http://universities.hipolabs.com/search?name=middle';
+  API_URL: string = 'http://universities.hipolabs.com/search';
   constructor( public http: Http) { }
   getUniversity() {
     let headers = new Headers({'Content-Type':'application/json'});
